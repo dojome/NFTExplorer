@@ -1,7 +1,7 @@
 # NFT Explorer
 
 Displays a list of NFTs (Non-Fungible Tokens) of a given address.
-![Grid Card]("https://github.com/bingo526/NFTExplorer/blob/master/screenshots/screenshots_1.png)
+![Grid Card](https://github.com/bingo526/NFTExplorer/blob/master/screenshots/screenshots_1.png)
 ![Dialog](https://github.com/bingo526/NFTExplorer/blob/master/screenshots/screenshots_2.png)
 
 ## Installation

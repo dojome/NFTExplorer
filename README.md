@@ -1,8 +1,8 @@
 # NFT Explorer
 
 Displays a list of NFTs (Non-Fungible Tokens) of a given address.
-![Grid Card]("./screenshots/screenshot_1.png")
-![Dialog]("./screenshots/screenshot_2.png")
+![Grid Card]("screenshots/screenshot_1.png")
+![Dialog]("screenshots/screenshot_2.png")
 
 ## Installation
 

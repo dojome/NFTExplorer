@@ -28,7 +28,7 @@ export function Home() {
         ) : (
           <div className="flex items-center justify-center">
             {error ? (
-              <div className="text-center text-lg text-red-500"> {error.message}</div>
+              <div className="my-10 text-center text-lg text-red-500"> {error.message.slice(5)}</div>
             ) : nfts ? (
               <div className="my-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 {nfts?.map((item, index) => (

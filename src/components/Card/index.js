@@ -10,7 +10,7 @@ export function Card({ nft, onClick }) {
     >
       <div className="flex h-60 items-center justify-center">
         {mediaType === 'mp4' ? (
-          <video width="350" height="350" className="h-60" controls autoPlay>
+          <video width="350" height="350" className="h-60" controls autoPlay loop>
             <source src={nft?.media[0]?.raw} type="video/mp4" />
           </video>
         ) : (

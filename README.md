@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# NFT Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Displays a list of NFTs (Non-Fungible Tokens) of a given address.
+![Grid Card]("./screenshots/screenshot_1.png")
+![Dialog]("./screenshots/screenshot_2.png")
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+```bash
+npm install
+```
 
-### `npm start`
+## Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Copy the .env.example to .env
+- Put the Alchemy API KEY in .env
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm start
+```
 
-### `npm test`
+## Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- TailwindCSS
+- Alchemy SDK
+- react-copy-to-clipboard
+- react-modal
+- classnames
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- assets (Include all the assets like images)
+- components (Include all the common and individual components like button, card, and dialog)
+- containers (Include all the containers like NavBar)
+- hooks (Include all the custom hooks like useAccountNfts)
+- pages (Include all the pages like Home)
+- utils (Include helpers and constants)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Requirements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The list of NFTs should be displayed as a grid of cards, with each card displaying the
+  NFT's details.
 
-### `npm run eject`
+- When a user clicks on a card, a modal should be displayed that shows more details
+  about the NFT, such as its description and the owner's address.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- The modal should have a button that allows the user to purchase the NFT. Clicking
+  the button should navigate them to the relevant OpenSea page.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## What have you done
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Got all NFTs of a given address using alchemy SDK.
+- Defined the custom hook(useAccountNFTs) to get all nfts.
+- Displayed NFT details using Card component.
+- Displayed NFT more details using Dialog by clicking Card.
+- Navigate the relevant OpenSea Page by clicking the "Purchase" button on the dialog.
+- Copy the address of token and owner by clicking
+- Added hover animation effect when you hover each card.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Self Evaluation :)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Correctness - 100%
+- Code Quality - 100%
+- User Experience- 100%

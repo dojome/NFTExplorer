@@ -11,7 +11,7 @@ export function Card({ nft, onClick }) {
         <img className="h-60 rounded-3xl" src={nft?.media[0]?.thumbnail || PlaceHolderImg} alt="" />
       </div>
       <div className="flex flex-col text-center">
-        <div className="text-pink-500">{nft?.title}</div>
+        <div className="text-pink-500">{nft?.title || `#${nft?.tokenId}`}</div>
         <div className="font-medium text-cyan-500">{nft?.contract?.name}</div>
       </div>
     </div>

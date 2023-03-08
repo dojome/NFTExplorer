@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Modal from 'react-modal'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { shortWalletAddress } from '../../utils/helpers'
@@ -9,6 +9,8 @@ export function CardModal({ modalIsOpen, closeModal, nft, address }) {
   const onPurchase = () => {
     window.open(`https://opensea.io/assets/ethereum/${nft?.contract?.address}/${nft?.tokenId}`)
   }
+
+  const owner = useMemo(() => (address?.includes('0x') ? shortWalletAddress(address) : address), [address])
 
   return (
     <Modal
@@ -21,7 +23,7 @@ export function CardModal({ modalIsOpen, closeModal, nft, address }) {
     >
       <div className="flex h-full w-full flex-col overflow-hidden bg-slate-700">
         <div className="flex items-center justify-between gap-4 border-b pb-3">
-          <div className="text-2xl text-pink-500">{nft?.title}</div>
+          <div className="text-2xl text-pink-500">{nft?.title || `#${nft?.tokenId}`}</div>
           <div className="flex">
             <Button label="Purchase" onClick={onPurchase} />
           </div>
@@ -38,7 +40,7 @@ export function CardModal({ modalIsOpen, closeModal, nft, address }) {
           <MetadataItem label="Token Type:" value={nft?.tokenType} />
           <CopyToClipboard text={address}>
             <span>
-              <MetadataItem label="Owner:" value={shortWalletAddress(address)} isCopy={true} />
+              <MetadataItem label="Owner:" value={owner} isCopy={true} />
             </span>
           </CopyToClipboard>
         </div>

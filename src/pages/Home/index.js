@@ -22,7 +22,7 @@ export function Home() {
       <div className="mt-20 flex flex-col px-5 py-10">
         <div className="flex w-full items-center justify-center">
           <SearchBox
-            className="w-1/2"
+            className="w-full md:w-1/2"
             placeholder="Enter wallet address"
             loading={loading}
             setValue={val => setSearchAddress(val)}

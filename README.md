@@ -60,6 +60,6 @@ npm start
 
 ## Self Evaluation :)
 
-- Correctness - 90%
+- Correctness - 99%
 - Code Quality - 100%
 - User Experience- 100%

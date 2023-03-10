@@ -35,7 +35,7 @@ export function Home() {
             {error ? (
               <div className="my-10 text-center text-lg text-red-500"> {error.message.slice(5)}</div>
             ) : nfts && nfts.length > 0 ? (
-              <div className="my-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              <div className="my-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
                 {nfts?.map((item, index) => (
                   <Card onClick={() => onClickCard(item)} nft={item} key={index} />
                 ))}

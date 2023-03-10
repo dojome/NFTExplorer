@@ -21,7 +21,12 @@ export function Home() {
       <NavBar />
       <div className="mt-20 flex flex-col px-5 py-10">
         <div className="flex w-full items-center justify-center">
-          <SearchBox className="w-1/2" placeholder="Enter wallet address" setValue={val => setSearchAddress(val)} />
+          <SearchBox
+            className="w-1/2"
+            placeholder="Enter wallet address"
+            loading={loading}
+            setValue={val => setSearchAddress(val)}
+          />
         </div>
         {loading ? (
           <Loading />
@@ -36,7 +41,7 @@ export function Home() {
                 ))}
               </div>
             ) : (
-              <div className="my-10 text-center text-2xl text-pink-500">No NFTs</div>
+              <div className="my-10 text-center text-2xl text-pink-500">Cannot find NFTs in this wallet!</div>
             )}
           </div>
         )}

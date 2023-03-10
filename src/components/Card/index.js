@@ -8,7 +8,7 @@ export function Card({ nft, onClick }) {
       onClick={() => onClick()}
     >
       <div className="flex h-60 items-center justify-center">
-        <Media media={nft?.media} />
+        <Media nft={nft} />
       </div>
       <div className="flex flex-col text-center">
         <div className="text-pink-500">{nft?.title || `#${nft?.tokenId}`}</div>

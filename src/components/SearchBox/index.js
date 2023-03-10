@@ -6,10 +6,13 @@ export function SearchBox({ className, placeholder, setValue, loading }) {
   const [address, setAddress] = useState('')
   const handleChange = event => {
     setAddress(event.target.value)
+    if (event.target.value === '') {
+      setValue('')
+    }
   }
 
   const handleKeyDown = event => {
-    if (event.key === 'Enter' && address) {
+    if (event.key === 'Enter') {
       // 👇 Get input value
       setValue(address)
     }

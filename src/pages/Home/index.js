@@ -40,8 +40,10 @@ export function Home() {
                   <Card onClick={() => onClickCard(item)} nft={item} key={index} />
                 ))}
               </div>
+            ) : searchAddress ? (
+              <div className="my-10 text-center text-2xl text-pink-500">Cannot find NFTs!</div>
             ) : (
-              <div className="my-10 text-center text-2xl text-pink-500">Cannot find NFTs in this wallet!</div>
+              ''
             )}
           </div>
         )}

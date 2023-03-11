@@ -2,18 +2,19 @@ import { useCallback, useEffect, useState } from 'react'
 import { Network, Alchemy } from 'alchemy-sdk'
 import { ALCHEMY_API_KEY } from '../utils/constants'
 
+const settings = {
+  apiKey: ALCHEMY_API_KEY, // Replace with your Alchemy API Key.
+  network: Network.ETH_MAINNET, // Replace with your network.
+}
+
+const alchemy = new Alchemy(settings)
+
 export const useAccountNFTs = address => {
   const [nfts, setNfts] = useState(null)
   const [error, setError] = useState('')
-  const [loading, setloading] = useState(false)
+  const [loading, setLoading] = useState(false)
   const fetchNFT = useCallback(() => {
-    setloading(true)
-    const settings = {
-      apiKey: ALCHEMY_API_KEY, // Replace with your Alchemy API Key.
-      network: Network.ETH_MAINNET, // Replace with your network.
-    }
-
-    const alchemy = new Alchemy(settings)
+    setLoading(true)
 
     // Print all NFTs returned in the response:
     alchemy.nft
@@ -25,7 +26,7 @@ export const useAccountNFTs = address => {
         setError(err)
       })
       .finally(() => {
-        setloading(false)
+        setLoading(false)
       })
   }, [address])
   useEffect(() => {

@@ -5,7 +5,7 @@ export function Card({ nft, onClick }) {
   return (
     <div
       className="flex max-w-sm cursor-pointer flex-col gap-2 rounded-3xl border-2 border-slate-800 bg-slate-800 p-3 hover:animate-pulse hover:border-2 hover:border-slate-500 hover:shadow-md"
-      onClick={() => onClick()}
+      onClick={onClick && onClick}
     >
       <div className="flex h-60 items-center justify-center">
         <Media nft={nft} />

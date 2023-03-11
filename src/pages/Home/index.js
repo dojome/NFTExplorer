@@ -34,14 +34,14 @@ export function Home() {
           <div className="flex items-center justify-center">
             {error ? (
               <div className="my-10 text-center text-lg text-red-500"> {error.message.slice(5)}</div>
-            ) : nfts && nfts.length > 0 ? (
+            ) : !!nfts?.length ? (
               <div className="my-10 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-                {nfts?.map((item, index) => (
+                {nfts.map((item, index) => (
                   <Card onClick={() => onClickCard(item)} nft={item} key={index} />
                 ))}
               </div>
             ) : searchAddress ? (
-              <div className="my-10 text-center text-2xl text-pink-500">Cannot find NFTs!</div>
+              <div className="my-10 text-center text-2xl text-pink-500">No NFTs Found!</div>
             ) : (
               ''
             )}

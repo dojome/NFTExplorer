@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react'
 import Modal from 'react-modal'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
-import { shortWalletAddress } from '../../utils/helpers'
+import { openLink, shortWalletAddress } from '../../utils/helpers'
 import { MetadataItem } from '../MetadataItem'
 import { Button } from '../Button'
 
 export function CardModal({ modalIsOpen, closeModal, nft, address }) {
   const onPurchase = () => {
-    window.open(`https://opensea.io/assets/ethereum/${nft?.contract?.address}/${nft?.tokenId}`)
+    openLink(`https://opensea.io/assets/ethereum/${nft?.contract?.address}/${nft?.tokenId}`)
   }
 
   const owner = useMemo(() => (address?.includes('0x') ? shortWalletAddress(address) : address), [address])

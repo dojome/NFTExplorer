@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import cx from 'classnames'
 import { SearchIcon, LoadingIcon } from '../Icons'
 
@@ -17,9 +17,13 @@ export function SearchBox({ className, placeholder, setValue, loading }) {
       setValue(address)
     }
   }
-  const handleSearch = address => {
-    setValue(address)
-  }
+
+  const handleSearch = useCallback(
+    address => () => {
+      setValue(address)
+    },
+    [setValue]
+  )
   return (
     <div
       className={cx(
@@ -37,10 +41,7 @@ export function SearchBox({ className, placeholder, setValue, loading }) {
         onKeyDown={handleKeyDown}
       />
       {address && (
-        <button
-          className="border-l border-pink-500 pl-3 font-medium text-pink-500"
-          onClick={() => handleSearch(address)}
-        >
+        <button className="border-l border-pink-500 pl-3 font-medium text-pink-500" onClick={handleSearch(address)}>
           {loading ? (
             <LoadingIcon className="mr-2 inline h-6 w-6 animate-spin fill-pink-600 text-gray-200 dark:text-gray-600" />
           ) : (
